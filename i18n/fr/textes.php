@@ -26,6 +26,8 @@ $meta = [
                 ]
 ];
 
+$comTitleCitation = "Cliquez pour afficher une nouvelle citation.";
+
 /********** ENTÊTE ********************/
 $entNomSite = "LEILA";
 $entSousTitre = "CUISINE BISTRONOMIQUE";

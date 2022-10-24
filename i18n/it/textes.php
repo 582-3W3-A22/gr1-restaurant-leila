@@ -24,6 +24,8 @@ $meta = [
                 ]
 ];
 
+$comTitleCitation = "Fare clic per visualizzare un nuovo preventivo.";
+
 /********** ENTÊTE ********************/
 $entNomSite = "LEILA";
 $entSousTitre = "BISTRONOMIC CUISINE";
