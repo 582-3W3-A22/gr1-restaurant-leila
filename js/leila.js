@@ -1,9 +1,9 @@
 // Gestion du clic sur la citation
-let laCitation = document.querySelector('.citation blockquote');
+let eltCitation = document.querySelector('.citation blockquote');
 
-if(laCitation !== null) {
+if(eltCitation !== null) {
     // Associer l'écouteur d'événement 'clic'
-    laCitation.addEventListener('click', changerCitation);
+    eltCitation.addEventListener('click', changerCitation);
 }
 
 /**
@@ -16,15 +16,19 @@ async function changerCitation() {
     // On va utiliser l'API 'Fetch'
     // Docs : https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
     
-    // 1a : réponse du serveur
+    // 1a : requête au serveur et capture de la réponse du serveur
     let reponse = await fetch("_ajax_citation.php");
     console.log("La réponse de la fonction fetch() est : ", reponse);
-    // 1b : extraire le contenu JSON de la réponse
+    // 1b : extraire le contenu JSON de la réponse du serveur
     let citationJson = await reponse.json();
+    // Remarquez que la méthode json() retourne un objet JS représentant 
+    // la chaîne JSON
     console.log("Le contenu JSON dans la réponse de la fonction fetch() : ", citationJson);
 
     // Étape 2 : une fois que j'ai la citation, l'intégrer dans la page HTML
     // pour remplacer la citation actuelle : 
-
-
+    // 2a : Injecter le texte de la citation
+    eltCitation.querySelector('.citation-texte').innerHTML = citationJson.texte;
+    // 2b : Injecter l'auteur de la citation
+    eltCitation.querySelector('cite').innerHTML ='- '+ citationJson.auteur;
 }

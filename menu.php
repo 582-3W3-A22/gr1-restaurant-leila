@@ -10,7 +10,7 @@
       <div class="citation">
         <img src="images/menu-citation.jpg" alt="">
         <blockquote title="<?= $comTitleCitation; ?>">
-          <?= $citation['texte']; ?>
+          <span class="citation-texte"><?= $citation['texte']; ?></span>
           <cite>- <?= $citation['auteur']; ?></cite>
         </blockquote>
       </div>
