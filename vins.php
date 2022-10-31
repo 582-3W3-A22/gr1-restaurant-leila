@@ -9,8 +9,8 @@
 <div class="contenu-principal">
       <div class="citation">
         <img src="images/vins-citation.png" alt="">
-        <blockquote title="<?= $comTitleCitation; ?>">
-          <?= $citation['texte']; ?>
+        <blockquote data-section="<?= $page; ?>" data-langue="<?= $lan; ?>" title="<?= $comTitleCitation; ?>">
+          <span class="citation-texte"><?= $citation['texte']; ?></span>
           <cite>- <?= $citation['auteur']; ?></cite>
         </blockquote>
       </div>

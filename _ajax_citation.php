@@ -6,9 +6,17 @@
     // Étape 1 : on inclut notre librairie de fonction
     include('lib/commun.lib.php');
     
+    // $page = "menu";
+    // if(isset($_GET['section'])) {
+    //     $page = $_GET['section'];
+    // }
+
+    $page = isset($_GET['section']) ? $_GET['section'] : "menu";
+    $lan = isset($_GET['langue']) ? $_GET['langue'] : "fr";
+    
     // Étape 2 : on utilise la fonction que nous avions déjà écrite pour obtenir
     // une citation aléatoire.
-    $citation = obtenirCitationAleatoire('menu', 'fr');
+    $citation = obtenirCitationAleatoire($page, $lan);
     // TODO : trouver une façon de rendre dynamique la section ('menu' ou 'vins') 
     // et la langue ('fr', etc.)
 

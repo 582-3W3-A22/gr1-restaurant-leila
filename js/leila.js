@@ -17,7 +17,10 @@ async function changerCitation() {
     // Docs : https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
     
     // 1a : requête au serveur et capture de la réponse du serveur
-    let reponse = await fetch("_ajax_citation.php");
+    let reponse = await fetch("_ajax_citation.php?section="
+            + eltCitation.getAttribute('data-section')
+            + "&langue=" 
+            + eltCitation.getAttribute('data-langue'));
     console.log("La réponse de la fonction fetch() est : ", reponse);
     // 1b : extraire le contenu JSON de la réponse du serveur
     let citationJson = await reponse.json();

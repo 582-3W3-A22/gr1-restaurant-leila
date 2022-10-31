@@ -9,7 +9,7 @@
 <div class="contenu-principal">
       <div class="citation">
         <img src="images/menu-citation.jpg" alt="">
-        <blockquote title="<?= $comTitleCitation; ?>">
+        <blockquote data-section="<?= $page; ?>" data-langue="<?= $lan; ?>" title="<?= $comTitleCitation; ?>">
           <span class="citation-texte"><?= $citation['texte']; ?></span>
           <cite>- <?= $citation['auteur']; ?></cite>
         </blockquote>
