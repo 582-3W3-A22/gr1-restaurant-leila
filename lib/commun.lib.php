@@ -68,4 +68,29 @@ function determinerLangue($langueParDefaut, $languesDispos) {
     }
     return $lan;
 }
+
+/*********** MENU ET CARTE DES VINS ***********************************/
+/**
+ * Retourne les articles de la section spécifiée dans la langue active.
+ * 
+ * @param string $section : Identifiant de la page correspondant à la section.
+ * @param string $langue : Sigle (deux lettres) de la langue active sur le site.
+ * 
+ * @return array : Tableau de tableaux contenant l'info des articles demandés.
+ */
+function obtenirArticles($section, $langue) 
+{
+    // Chercher les données dans la BD pour cette section et retourner
+    // un tableau de tableaux PHP contenant les articles groupés par
+    // catégorie
+    $sql = "SELECT	
+                    p.nom, 
+                    description, 
+                    `portion`, 
+                    prix,
+                    c.nom AS nomCat
+                FROM plat AS p
+                    JOIN categorie AS c 
+                    ON categorie_id = c.id;";
+}
 ?>
